@@ -8,6 +8,7 @@ Summary
 3. When a worker is done with assigned task it contacts master asking for another task, if all tasks are finished master asks worker to shutdown itself.
 4. If a worker dies/become slow due to some reason, master reassigns that task to some other worker.
 5. If a dead worker returns again, a new task is assigned to it and its old work is discarded as the worker was considered dead.
+6. Workers talks to Master via go RPCs and assumes they are running on different machines.
 
 Usage:
 1. ```go run master.go rpc.go files/input-* ``` for running Master.
